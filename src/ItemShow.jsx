@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import OptionsList from './OptionsList'
 
+import API_BASE_URL from "./config";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
@@ -27,7 +28,7 @@ const ItemShow = ({ id, title, content }) => {
         try
         {
             setError("");
-            const response = await fetch(`http://localhost:8080/api/note/delete/${id}`,
+           const response = await fetch(`${API_BASE_URL}/api/note/delete/${id}`,
                 {
                     method: "DELETE",
                     credentials: "include"

@@ -1,4 +1,4 @@
-
+import API_BASE_URL from "./config";
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import OptionsList from './OptionsList';
@@ -31,7 +31,7 @@ const AddNotes = () => {
         const timeout = setTimeout(() => controller.abort(), 5000);
 
         try {
-            const response = await fetch("http://localhost:8080/api/note", {
+            const response = await fetch(`${API_BASE_URL}/api/note`, {
                 method: "POST",
                 credentials:"include",
                 headers: {

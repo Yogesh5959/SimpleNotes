@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import OptionsList from './OptionsList';
 import { FaHome } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
+import API_BASE_URL from "./config";
 const User = () => {
 
     const [data, setData] = useState([]);
@@ -21,7 +22,7 @@ const User = () => {
         try
         {
             
-            const response = await fetch("http://localhost:8080/api/userActivity/deleteActivity",
+            const response = await fetch(`${API_BASE_URL}/api/userActivity/deleteActivity`,
                 {
                     method: "DELETE",
                     credentials:"include"
@@ -52,7 +53,7 @@ const User = () => {
         }
         try
         {
-            const response = await fetch("http://localhost:8080/api/Login/logout",
+            const response = await fetch(`${API_BASE_URL}/api/Login/logout`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -80,7 +81,7 @@ const User = () => {
         {
             try
             {
-                const response = await fetch("http://localhost:8080/api/userActivity/getActivity",
+                const response = await fetch(`${API_BASE_URL}/api/userActivity/getActivity`,
                     {
                         method: "GET",
                         credentials: "include",

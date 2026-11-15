@@ -1,3 +1,4 @@
+import API_BASE_URL from "./config";
 import React, { useState } from 'react'
 import { FaEye } from "react-icons/fa";
 
@@ -27,7 +28,7 @@ const Login = () => {
         e.preventDefault();
         
         try {
-            const response = await fetch("http://localhost:8080/api/Login",
+           const response = await fetch(`${API_BASE_URL}/api/Login`,
                 {
                     method: "Post",
                      

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ItemShow from './ItemShow';
 
+import API_BASE_URL from "./config";
 import OptionsList from './OptionsList';
 import { useNavigate } from 'react-router-dom';
 import { FaGreaterThan } from "react-icons/fa";
@@ -32,7 +33,7 @@ const ViewNotes = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await fetch("http://localhost:8080/api/note/getNotes",
+                const response = await fetch(`${API_BASE_URL}/api/note/getNotes`,
                     {
                         method: "GET",
                         credentials:"include"

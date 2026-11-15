@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { CiLock } from "react-icons/ci";
 
+import API_BASE_URL from "./config";
 import { FaEye } from "react-icons/fa";
 import { LuEyeClosed } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -45,7 +46,7 @@ const handleSubmit = async (e) => {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/api/signup", {
+       const response = await fetch(`${API_BASE_URL}/api/signup`, {
           method: "POST",
            credentials: "include",
             headers: {
