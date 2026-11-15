@@ -1,0 +1,23 @@
+# React
+node_modules/
+dist/
+.vite/
+
+# Spring Boot / Maven
+backend/**/target/
+
+# IDE
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
