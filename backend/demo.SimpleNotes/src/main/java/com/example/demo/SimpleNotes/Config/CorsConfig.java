@@ -1,4 +1,3 @@
-
 package com.example.demo.SimpleNotes.Config;
 
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +11,10 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
 
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:5173")
+                .allowedOrigins(
+                    "http://localhost:5173",
+                    "https://simplenotes-yogesh.netlify.app"
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
