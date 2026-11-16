@@ -1,11 +1,12 @@
-RUN mvn clean package -Dmaven.test.skip=true
+
+FROM maven:3.9.9-eclipse-temurin-24 AS build
 
 WORKDIR /app
 
 COPY backend/demo.SimpleNotes/pom.xml .
 COPY backend/demo.SimpleNotes/src ./src
 
-RUN mvn clean package -DskipTests
+RUN mvn clean package -Dmaven.test.skip=true
 
 FROM eclipse-temurin:24-jre
 
